@@ -4,7 +4,7 @@ import random
 from bs4 import BeautifulSoup
 app = Flask(__name__)
 
-DEFAULT_SECTION = 'economy'
+DEFAULT_FEED = 'main'
 
 def get_feed(url):
     return feedparser.parse(url).entries
@@ -12,11 +12,13 @@ def get_feed(url):
 def make_soup(item):
     return BeautifulSoup(item.summary, 'html.parser')
 
-@app.route('/<path:section>')
-def hello_world(section):
-    if not section:
-        section = DEFAULT_SECTION
-    url = 'https://www.texastribune.org/feeds/sections/'+section
+@app.route('/')
+def respond():
+    return hello_world(DEFAULT_FEED)
+
+@app.route('/<path:path>')
+def hello_world(path):
+    url = 'https://www.texastribune.org/feeds/'+path
     items = get_feed(url)
     struct_items = []
     for item in items:
