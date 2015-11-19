@@ -58,6 +58,7 @@ textarea {
 
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    background-color: #ffc200;
 }
 
 .wrapper {
@@ -370,4 +371,26 @@ nav a:hover {
     h3 {
         page-break-after: avoid;
     }
+}
+
+.date {
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-size: .8em;
+   text-transform: uppercase;
+   font-weight: 400;
+   color:#453b42;
+   text-align: left;
+   margin-left: 5px;
+}
+
+.polaroid {
+   text-align: center;
+       background-color: #fff;
+       padding-top: 16px;
+       padding-left: 10px;
+       padding-right: 10px;
+       padding-bottom: 1px;
+       -moz-box-shadow:    6px 6px 0px 1px #D59437;
+       -webkit-box-shadow: 6px 6px 0px 1px #D59437;
+       box-shadow:         6px 6px 0px 1px #D59437;
 }

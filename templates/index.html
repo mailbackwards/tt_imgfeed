@@ -23,12 +23,12 @@
             <div class="main wrapper clearfix">
 
                 {% for item in items %}
-                    <article>
-                        <blockquote>
-                            <p><em>{{ item.date }}</em></p>
-                            <img src="{{ item.img }}">
-                        </blockquote>
-                    </article>
+                    <blockquote>
+                       <div class="polaroid">
+                           <img  src="{{ item.img }}">
+                           <p class="date">{{ item.date }}</p>
+                       </div>
+                    </blockquote>
                 {% endfor %}
             </div> <!-- #main -->
         </div> <!-- #main-container -->
