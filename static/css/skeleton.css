@@ -345,7 +345,7 @@ textarea,
 select,
 fieldset {
   margin-bottom: 1.5rem; }
-pre,
+/*pre,
 blockquote,
 dl,
 figure,
@@ -354,7 +354,7 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2.5rem; }*/
 
 
 /* Utilities
