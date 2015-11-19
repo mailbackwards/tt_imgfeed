@@ -22,9 +22,11 @@ def hello_world(section):
     for item in items:
         soup = make_soup(item)
         img = soup.find('img') or {}
+        if not img:
+            continue
         struct_items.append({
             'headline': item.title,
-            'img': img.get('src', 'http://www.fillmurray.com/200/300'),
+            'img': img.get('src'),
             'date': ' '.join(item.published.split(' ')[:4])
         })
     return render_template('index.html', items=struct_items)

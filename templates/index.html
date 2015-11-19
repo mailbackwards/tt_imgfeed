@@ -23,10 +23,10 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
 
-                {% for item_row in items | batch(2, '&nbsp') %}
+                {% for item_row in items | batch(3, '&nbsp') %}
                     <div class="row">
                         {% for item in item_row %}
-                            <div class="six columns">
+                            <div class="four columns">
                                 <blockquote>
                                    <div class="polaroid">
                                        <img src="{{ item.img }}">
