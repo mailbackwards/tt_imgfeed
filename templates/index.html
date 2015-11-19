@@ -9,6 +9,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="/static/css/normalize.min.css">
+        <link rel="stylesheet" href="/static/css/skeleton.css">
         <link rel="stylesheet" href="/static/css/main.css">
 
         <script src="/static/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -22,22 +23,23 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
 
-                {% for item in items %}
-                    <blockquote>
-                       <div class="polaroid">
-                           <img  src="{{ item.img }}">
-                           <p class="date">{{ item.date }}</p>
-                       </div>
-                    </blockquote>
+                {% for item_row in items | batch(2, '&nbsp') %}
+                    <div class="row">
+                        {% for item in item_row %}
+                            <div class="six columns">
+                                <blockquote>
+                                   <div class="polaroid">
+                                       <img src="{{ item.img }}">
+                                       <p class="date">{{ item.date }}</p>
+                                   </div>
+                                </blockquote>
+                            </div>
+                        {% endfor %}
+                    </div>
                 {% endfor %}
+
             </div> <!-- #main -->
         </div> <!-- #main-container -->
-
-        <div class="footer-container">
-            <footer class="wrapper">
-                <h3>footer</h3>
-            </footer>
-        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
