@@ -22,7 +22,7 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-
+                <h4 class="feedtitle">{{ title }}</h4>
                 {% for item_row in items | batch(4, '&nbsp') %}
                     <div class="row">
                         {% for item in item_row %}
